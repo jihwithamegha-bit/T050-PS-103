@@ -1,0 +1,5 @@
+package_id,student_id,tutor_id,pack_size,purchase_date
+PKG-01,STU-003,TU-022,8,2026-09-20
+PKG-02,STU-007,TU-010,16,2026-09-28
+PKG-03,STU-011,TU-022,8,2026-08-20
+PKG-04,STU-015,TU-020,8,2026-10-01
