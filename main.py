@@ -363,8 +363,12 @@ class Engine:
             request_id in self.sessions
             or student_id not in self.students
             or minutes not in (30, 45, 60)
+            or not 1 <= grade <= 12
+            or not subject.strip()
+            or not language.strip()
             or start <= now
         ):
+
             result["status"] = "REJECTED"
             self.matches.append(result)
             return
@@ -853,10 +857,10 @@ class Engine:
                 - penalties + carried_in
             )
 
-            if (
-                payable > 0
-                and self.annual[tutor_id] + payable
-                > dec("30000")
+            # Tax is withheld on an actual payable settlement, not
+            # on a balance that has not yet reached the payout floor.
+            if payable >= dec("500") and (
+                self.annual[tutor_id] + payable > dec("30000")
             ):
                 tds = cash(payable * dec("0.10"))
             else:
@@ -864,7 +868,7 @@ class Engine:
 
             net = cash(payable - tds)
 
-            if net >= dec("500"):
+            if payable >= dec("500"):
                 paid = net
                 carried_forward = ZERO
             else:
