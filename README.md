@@ -181,3 +181,14 @@ It provides a foundation for building a larger online tutoring platform while ke
 **Team:** T050  
 **Problem Statement:** PS-103  
 **Capstone Program:** 10 SECONDS
+
+
+
+
+## Project Demonstration Video
+
+Watch our five-minute project demonstration here:
+
+[Watch the T050 – PS-103 Project Demo](https://drive.google.com/file/d/1lAFzZbTM95E2tJeGI8-FQUTGxuptSB5d/view?usp=sharing)
+
+The video demonstrates the Python program execution, generated CSV reports, and automated testing.
